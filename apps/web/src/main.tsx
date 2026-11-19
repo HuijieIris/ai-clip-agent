@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
       <ToastProvider>
-        {__GITHUB_PAGES__ && <div className="pages-notice" role="status">在线展示版 · 视频上传、AI 分析与导出需连接后端服务。<a href="https://github.com/HuijieIris/ai-clip-agent">查看项目与本地运行说明 ↗</a></div>}
+        {__GITHUB_PAGES__ && <div className="pages-notice" role="status">在线展示版<a href="https://api-production-a0c615bb.up.railway.app">打开完整在线工作台 ↗</a></div>}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />

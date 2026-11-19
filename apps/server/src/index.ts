@@ -1188,6 +1188,18 @@ for(const job of exports_.all()){
 recoverPackaging()
 for(const p of projects.all())if(p.autoFrameRun&&['preparing','rendering'].includes(p.autoFrameRun.status))projects.patch(p.id,{autoFrameRun:{...p.autoFrameRun,status:'failed',message:'服务重启中断自动套框，请重试；已完成包装保留'}})
 
+// Serve the production frontend with the API and uploaded media on one origin.
+const frontendDir = join(import.meta.dir, '../../web/dist')
+app.get('*', async (c, next) => {
+  if (c.req.path.startsWith('/api/') || c.req.path.startsWith('/files/')) return next()
+  const path = decodeURIComponent(c.req.path)
+  if (path.split('/').includes('..')) return c.notFound()
+  const asset = Bun.file(join(frontendDir, path))
+  if (await asset.exists()) return new Response(asset)
+  const index = Bun.file(join(frontendDir, 'index.html'))
+  return await index.exists() ? new Response(index) : c.notFound()
+})
+
 // 默认 8788：避开 8787（该端口常被同机其他服务占用，会静默抢走请求）
 const port = Number(process.env.PORT || 8788)
 console.log(`API on http://localhost:${port}  (ai=${aiMode()})`)
