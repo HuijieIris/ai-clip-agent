@@ -1,0 +1,20 @@
+node_modules
+dist
+*.log
+apps/server/data/uploads/*
+apps/server/data/outputs/*
+apps/server/data/*.json
+!apps/server/data/.gitkeep
+apps/server/data/cache/
+
+# ASR / LLM credentials
+.env
+.env.*
+!.env.example
+
+# Local database and migration backups
+apps/server/data/*.sqlite*
+apps/server/data/backups/
+
+# macOS metadata
+.DS_Store

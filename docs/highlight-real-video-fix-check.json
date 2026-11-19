@@ -1,0 +1,51 @@
+{
+  "projectId": "prj_lmrfemj8039f",
+  "status": "completed",
+  "transcriptCount": 546,
+  "translationCount": 546,
+  "missingTranslations": 0,
+  "needsHumanReview": 19,
+  "highlightCount": 6,
+  "invalidHighlights": 0,
+  "modelCalls": 23,
+  "skippedMalformedCandidates": 1,
+  "highlights": [
+    {
+      "title": "中美电力产能三倍差距下的长期挑战",
+      "start": 209827,
+      "end": 243820,
+      "score": 88
+    },
+    {
+      "title": "轨道计算与太空太阳能：解决地面能源密度瓶颈的战略路径",
+      "start": 386210,
+      "end": 470650,
+      "score": 88
+    },
+    {
+      "title": "安全与技术进步不是对立面，而是一体两面",
+      "start": 943150,
+      "end": 973220,
+      "score": 88
+    },
+    {
+      "title": "普通美国人用Claude做研究：从提问到生成可视化报告的3分钟体验",
+      "start": 1213980,
+      "end": 1284530,
+      "score": 88
+    },
+    {
+      "title": "SSI判断力的双刃性：工具属性与用户意图适配困境",
+      "start": 1400180,
+      "end": 1470130,
+      "score": 88
+    },
+    {
+      "title": "白宫联合声明：SI安全的多层监管框架与行业强制标准",
+      "start": 1489370,
+      "end": 1562790,
+      "score": 86
+    }
+  ],
+  "checkedAt": "2026-11-15T09:25:17.793Z"
+}

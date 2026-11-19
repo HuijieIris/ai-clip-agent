@@ -1,0 +1,267 @@
+{
+  "testType": "人工编写英文文本样本，时间戳为测试设置；真实千问调用，不代表真实视频或ASR验收",
+  "elapsedMs": 67051,
+  "highlights": [
+    {
+      "id": "hl_wqd5h9fi31et",
+      "title": "交货延迟才是客户最大痛点，不是价格",
+      "reason": "完整呈现问题识别闭环：错误假设→降价实验→结果失效→客户访谈归因→策略修正→复购验证；所有环节均在提供的四个segment中明确对应，无缺失；时长80秒（60000–80000ms为validation_4末尾，起始validation_1为0ms，总跨度80000ms），符合40–80秒要求（注：实际为80000ms=80秒，属上限允许值）。",
+      "start": 0,
+      "end": 80000,
+      "score": 88,
+      "transcript": "We thought lower prices would bring more customers. But that assumption turned out to be wrong. We reduced our prices by twenty percent. Orders barely changed, and our margins became much smaller. After interviewing existing customers, we learned that late delivery was their biggest problem, not the price. So we restored our original prices and focused on reliable delivery. Repeat orders increased over the next three months.",
+      "tags": [
+        "归因分析",
+        "实验反思",
+        "交付优先"
+      ],
+      "status": "draft",
+      "details": {
+        "analysisRunId": "analysis_zikuzihg1lod",
+        "transcriptVersion": "8d0ea1b679411238ee1641600315dfd837163e4f8b9d56d348072ddb3fc26e24",
+        "source": "llm",
+        "startSegmentId": "validation_1",
+        "endSegmentId": "validation_4",
+        "transcriptZh": "我们曾以为更低的价格会带来更多的顾客。但这一假设结果被证明是错误的。 我们将价格降低了百分之二十。订单几乎未变，而利润率却大幅缩小。 在对现有客户进行访谈后，我们了解到，交货延迟才是他们最大的问题，而非价格。 因此，我们恢复了原价，并专注于可靠的交付。接下来三个月内，复购订单有所增加。",
+        "dimensions": {
+          "semantic_completeness": {
+            "score": 5,
+            "reason": "覆盖完整问答链：Why did price cut fail? → Because delivery delay, not price, is the real pain point; What did we do? → Interviewed customers, restored price, focused on delivery; What was outcome? → Repeat orders increased. 全部信息见validation_1–validation_4。",
+            "segmentIds": [
+              "validation_1",
+              "validation_2",
+              "validation_3",
+              "validation_4"
+            ]
+          },
+          "information_value": {
+            "score": 5,
+            "reason": "含具体动作（降价20%）、量化结果（orders barely changed, margins much smaller）、归因依据（interviewing existing customers）、修正策略（restored original prices + focused on reliable delivery）、效果数据（repeat orders increased over next three months）。全部来自原文。",
+            "segmentIds": [
+              "validation_1",
+              "validation_2",
+              "validation_3",
+              "validation_4"
+            ]
+          },
+          "hook_potential": {
+            "score": 4,
+            "reason": "首句‘We thought lower prices would bring more customers. But that assumption turned out to be wrong.’构成强认知冲突，具真实悬念感；但未使用疑问/惊叹/极端表述，故未达满分。",
+            "segmentIds": [
+              "validation_1"
+            ]
+          },
+          "audience_fit": {
+            "score": 3,
+            "reason": "未配置频道画像，按中性匹配处理",
+            "segmentIds": []
+          },
+          "evidence_fidelity": {
+            "score": 5,
+            "reason": "全文严格忠实于逐字稿，未添加、删减或曲解任何信息；核心结论‘late delivery was their biggest problem, not the price’与validation_3原文完全一致。",
+            "segmentIds": [
+              "validation_1",
+              "validation_2",
+              "validation_3",
+              "validation_4"
+            ]
+          }
+        },
+        "signals": [
+          {
+            "ruleId": "reversal",
+            "segmentIds": [
+              "validation_1"
+            ],
+            "basis": "text",
+            "quote": "But that assumption turned out to be wrong."
+          },
+          {
+            "ruleId": "quantitative",
+            "segmentIds": [
+              "validation_2"
+            ],
+            "basis": "text",
+            "quote": "We reduced our prices by twenty percent. Orders barely changed, and our margins became much smaller."
+          },
+          {
+            "ruleId": "case_result",
+            "segmentIds": [
+              "validation_4"
+            ],
+            "basis": "text",
+            "quote": "So we restored our original prices and focused on reliable delivery. Repeat orders increased over the next three months."
+          }
+        ],
+        "evidence": [
+          {
+            "segmentId": "validation_1",
+            "quote": "We thought lower prices would bring more customers. But that assumption turned out to be wrong."
+          },
+          {
+            "segmentId": "validation_2",
+            "quote": "We reduced our prices by twenty percent. Orders barely changed, and our margins became much smaller."
+          },
+          {
+            "segmentId": "validation_3",
+            "quote": "After interviewing existing customers, we learned that late delivery was their biggest problem, not the price."
+          },
+          {
+            "segmentId": "validation_4",
+            "quote": "So we restored our original prices and focused on reliable delivery. Repeat orders increased over the next three months."
+          }
+        ],
+        "reviewFlags": [
+          "profile_defaulted"
+        ],
+        "trend": {
+          "status": "skipped",
+          "relation": "none",
+          "sourceIds": [],
+          "reason": "未取得足够新闻证据，不代表没有关联",
+          "verificationStatus": "unverified"
+        },
+        "audio": {
+          "status": "unavailable",
+          "observations": [],
+          "transcriptCheck": "unknown",
+          "issues": [
+            "未提供原音频，未执行声音分析"
+          ]
+        }
+      }
+    }
+  ],
+  "source": "cloud",
+  "run": {
+    "id": "analysis_zikuzihg1lod",
+    "transcriptVersion": "8d0ea1b679411238ee1641600315dfd837163e4f8b9d56d348072ddb3fc26e24",
+    "promptVersion": "highlight-bilingual-1.1",
+    "rulesVersion": "five-dim-1.0",
+    "provider": "openai-compatible",
+    "model": "qwen-plus",
+    "status": "completed",
+    "createdAt": 1794728557310,
+    "requestedCount": 2,
+    "actualCount": 1,
+    "warnings": [
+      "部分候选未完成原音频模型复听；文本语气仅为文字推断",
+      "目标2条，实际1条；未为凑数降低质量或时长要求"
+    ],
+    "rejectionReasons": [
+      "cand_55f5m1gw27lz：语义不完整：缺失实验背景与效果验证；信息价值薄弱：仅有方法论建议，无数据、无结果、无案例支撑；虽时长恰好40秒，但内容未形成独立有效切片。"
+    ],
+    "searches": [],
+    "translations": [
+      {
+        "segmentId": "validation_1",
+        "textZh": "我们曾以为更低的价格会带来更多的顾客。但这一假设结果被证明是错误的。",
+        "status": "reviewed",
+        "issues": []
+      },
+      {
+        "segmentId": "validation_2",
+        "textZh": "我们将价格降低了百分之二十。订单几乎未变，而利润率却大幅缩小。",
+        "status": "reviewed",
+        "issues": []
+      },
+      {
+        "segmentId": "validation_3",
+        "textZh": "在对现有客户进行访谈后，我们了解到，交货延迟才是他们最大的问题，而非价格。",
+        "status": "reviewed",
+        "issues": []
+      },
+      {
+        "segmentId": "validation_4",
+        "textZh": "因此，我们恢复了原价，并专注于可靠的交付。接下来三个月内，复购订单有所增加。",
+        "status": "reviewed",
+        "issues": []
+      },
+      {
+        "segmentId": "validation_5",
+        "textZh": "这是一次针对我们现有客户的小型实验。它并不能证明提价对每一家企业都有效。",
+        "status": "reviewed",
+        "issues": []
+      },
+      {
+        "segmentId": "validation_6",
+        "textZh": "我的建议是：在调整价格前，先询问客户离开的原因。每次只测试一项变动，并衡量复购行为，而非仅关注点击量。",
+        "status": "reviewed",
+        "issues": []
+      }
+    ],
+    "calls": [
+      {
+        "stage": "translate",
+        "model": "qwen-plus",
+        "elapsedMs": 5102,
+        "inputTokens": 564,
+        "outputTokens": 208,
+        "status": "ok"
+      },
+      {
+        "stage": "translation_review",
+        "model": "qwen-plus",
+        "elapsedMs": 6002,
+        "inputTokens": 878,
+        "outputTokens": 259,
+        "status": "ok"
+      },
+      {
+        "stage": "recall",
+        "model": "qwen-plus",
+        "elapsedMs": 17298,
+        "inputTokens": 1243,
+        "outputTokens": 764,
+        "status": "ok"
+      },
+      {
+        "stage": "global_review",
+        "model": "qwen-plus",
+        "elapsedMs": 38619,
+        "inputTokens": 1739,
+        "outputTokens": 1736,
+        "status": "ok"
+      }
+    ],
+    "finishedAt": 1794728624357
+  },
+  "translations": [
+    {
+      "segmentId": "validation_1",
+      "textZh": "我们曾以为更低的价格会带来更多的顾客。但这一假设结果被证明是错误的。",
+      "status": "reviewed",
+      "issues": []
+    },
+    {
+      "segmentId": "validation_2",
+      "textZh": "我们将价格降低了百分之二十。订单几乎未变，而利润率却大幅缩小。",
+      "status": "reviewed",
+      "issues": []
+    },
+    {
+      "segmentId": "validation_3",
+      "textZh": "在对现有客户进行访谈后，我们了解到，交货延迟才是他们最大的问题，而非价格。",
+      "status": "reviewed",
+      "issues": []
+    },
+    {
+      "segmentId": "validation_4",
+      "textZh": "因此，我们恢复了原价，并专注于可靠的交付。接下来三个月内，复购订单有所增加。",
+      "status": "reviewed",
+      "issues": []
+    },
+    {
+      "segmentId": "validation_5",
+      "textZh": "这是一次针对我们现有客户的小型实验。它并不能证明提价对每一家企业都有效。",
+      "status": "reviewed",
+      "issues": []
+    },
+    {
+      "segmentId": "validation_6",
+      "textZh": "我的建议是：在调整价格前，先询问客户离开的原因。每次只测试一项变动，并衡量复购行为，而非仅关注点击量。",
+      "status": "reviewed",
+      "issues": []
+    }
+  ]
+}

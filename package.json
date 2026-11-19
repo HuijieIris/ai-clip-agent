@@ -1,0 +1,16 @@
+{
+  "name": "ai-clip-agent",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n web,api -c cyan,green \"bun run dev:web\" \"bun run dev:api\"",
+    "dev:web": "cd apps/web && bunx vite --port 5180",
+    "dev:api": "cd apps/server && bun --hot run src/index.ts",
+    "build": "cd apps/web && bunx tsc -b && bunx vite build",
+    "start": "cd apps/server && bun run src/index.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
