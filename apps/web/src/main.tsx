@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './styles.css'
 import { ToastProvider } from './ui/toast'
 import { HomePage } from './pages/HomePage'
@@ -13,10 +13,13 @@ import { ExportPage } from './pages/ExportPage'
 import { DashboardPage, ProjectsPage, AssetsPage, TemplatesPage } from './pages/ListPages'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
 
+const Router = __GITHUB_PAGES__ ? HashRouter : BrowserRouter
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <Router>
       <ToastProvider>
+        {__GITHUB_PAGES__ && <div className="pages-notice" role="status">在线展示版 · 视频上传、AI 分析与导出需连接后端服务。<a href="https://github.com/HuijieIris/ai-clip-agent">查看项目与本地运行说明 ↗</a></div>}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
@@ -33,6 +36,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </ToastProvider>
-    </BrowserRouter>
+    </Router>
   </StrictMode>
 )

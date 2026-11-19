@@ -15,6 +15,10 @@ class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  if (__GITHUB_PAGES__) {
+    if (path === '/api/templates' || path === '/api/projects' || path === '/api/assets') return [] as T
+    throw new ApiError('在线展示版需连接后端服务后使用此功能', 503)
+  }
   const res = await fetch(path, init)
   const text = await res.text()
   let data: any = null

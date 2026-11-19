@@ -1873,3 +1873,9 @@ button:disabled {
 /* 高光筛选：播放中的逐字稿与已选高光范围分开标识。 */
 .tx-line.tx-playing{background:rgba(201,255,77,.12);box-shadow:inset 3px 0 var(--accent)}
 .tx-line.tx-playing .tx-time{color:var(--accent);font-weight:700}
+
+.pages-notice { position: relative; z-index: 10; padding: 10px 20px; background: #25311b; color: #dfebcf; font-size: 13px; text-align: center; }
+.pages-notice a { color: #c9ff4d; margin-left: 12px; }
+body:has(.pages-notice) #root { display: flex; flex-direction: column; }
+body:has(.pages-notice) #root > .app-shell,
+body:has(.pages-notice) #root > .home-page { flex: 1; min-height: 0; }
